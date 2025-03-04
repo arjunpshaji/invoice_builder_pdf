@@ -10,11 +10,11 @@ Features
 
 Screenshots
 📱 Mobile View
-<img src="assets/screenshots/mobile_view.png" width="300" alt="Mobile View">
+<img src="assets/Screenshot from 2025-03-04 19-14-08.png" width="300" alt="Mobile View">
 💻 Tablet View
-<img src="assets/screenshots/tablet_view.png" width="500" alt="Tablet View">
+<img src="assets/Screenshot from 2025-03-04 19-13-45.png" width="500" alt="Tablet View">
 🖥️ Desktop View
-<img src="assets/screenshots/desktop_view.png" width="800" alt="Desktop View">
+<img src="assets/Screenshot from 2025-03-04 19-14-26.png" width="800" alt="Desktop View">
 
 Dependencies
 -----------------
