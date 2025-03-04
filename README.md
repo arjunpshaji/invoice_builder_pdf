@@ -1,17 +1,23 @@
-# invoice_generator
+Invoice Generator
+A Flutter-based web application for invoice generator with PDF export functionality.
 
-A new Flutter project.
+Features
+✅ Create and manage invoices
+✅ Add multiple line items
+✅ Auto-calculate totals, including GST
+✅ Export invoices as PDF
+✅ Responsive design for mobile, tablet, and desktop
 
-## Getting Started
+Screenshots
+📱 Mobile View
+<img src="assets/screenshots/mobile_view.png" width="300" alt="Mobile View">
+💻 Tablet View
+<img src="assets/screenshots/tablet_view.png" width="500" alt="Tablet View">
+🖥️ Desktop View
+<img src="assets/screenshots/desktop_view.png" width="800" alt="Desktop View">
 
-This project is a starting point for a Flutter application.
+Dependencies
+-----------------
+flutter_riverpod for state management
+pdf & printing for PDF generation
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# invoice_builder_pdf
