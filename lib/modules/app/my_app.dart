@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:invoice_generator/modules/home/view/invoice_builder_page.dart';
+import 'package:invoice_generator/modules/home/view/invoice_generator.dart';
 import 'package:invoice_generator/modules/theme/app_theme.dart';
 
 class MyApp extends ConsumerStatefulWidget {
@@ -18,7 +18,7 @@ class _MyAppState extends ConsumerState<MyApp> {
       navigatorKey: widget.navigatorKey,
       theme: getAppTheme(context),
       debugShowCheckedModeBanner: false,
-      home: const InvoiceBuilderPage(),
+      home: InvoiceGenerator(),
     );
   }
 }
