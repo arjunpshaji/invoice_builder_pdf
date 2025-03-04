@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -140,7 +141,12 @@ class InvoiceGenerator extends ConsumerWidget {
         child: Column(
           children: [
             Container(
-              margin: const EdgeInsets.fromLTRB(160, 80, 160, 160),
+              margin: EdgeInsets.fromLTRB(
+                MediaQuery.of(context).size.width > 900 ? 160 : 10,
+                80,
+                MediaQuery.of(context).size.width > 900 ? 160 : 10,
+                160,
+              ),
               padding: const EdgeInsets.all(80),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
@@ -185,10 +191,13 @@ class InvoiceGenerator extends ConsumerWidget {
                             TableCell(
                                 child: Padding(
                                     padding: const EdgeInsets.all(8),
-                                    child: Text(
+                                    child: AutoSizeText(
                                       'Description',
+                                      minFontSize: 16,
+                                      maxFontSize: 18,
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
                                       style: TextStyle(
-                                        fontSize: 18,
                                         color: appColor(context).text,
                                         fontWeight: FontWeight.w600,
                                       ),
@@ -196,10 +205,13 @@ class InvoiceGenerator extends ConsumerWidget {
                             TableCell(
                                 child: Padding(
                                     padding: const EdgeInsets.all(8),
-                                    child: Text(
+                                    child: AutoSizeText(
                                       'Unit (hrs/sqft)',
+                                      minFontSize: 16,
+                                      maxFontSize: 18,
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
                                       style: TextStyle(
-                                        fontSize: 18,
                                         color: appColor(context).text,
                                         fontWeight: FontWeight.w600,
                                       ),
@@ -207,10 +219,13 @@ class InvoiceGenerator extends ConsumerWidget {
                             TableCell(
                                 child: Padding(
                                     padding: const EdgeInsets.all(8),
-                                    child: Text(
+                                    child: AutoSizeText(
                                       'Price/unit',
+                                      minFontSize: 16,
+                                      maxFontSize: 18,
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
                                       style: TextStyle(
-                                        fontSize: 18,
                                         color: appColor(context).text,
                                         fontWeight: FontWeight.w600,
                                       ),
@@ -218,10 +233,13 @@ class InvoiceGenerator extends ConsumerWidget {
                             TableCell(
                                 child: Padding(
                                     padding: const EdgeInsets.all(8),
-                                    child: Text(
+                                    child: AutoSizeText(
                                       'Total',
+                                      minFontSize: 16,
+                                      maxFontSize: 18,
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
                                       style: TextStyle(
-                                        fontSize: 18,
                                         color: appColor(context).text,
                                         fontWeight: FontWeight.w600,
                                       ),
@@ -246,19 +264,9 @@ class InvoiceGenerator extends ConsumerWidget {
                         color: appColor(context).green,
                         onHover: (value) {},
                         onPressed: addNewItem,
-                        icon: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          spacing: 8,
-                          children: [
-                            Icon(
-                              Icons.add_box_rounded,
-                              color: appColor(context).green,
-                            ),
-                            Text(
-                              'Add Field',
-                              style: TextStyle(fontSize: 18, color: appColor(context).text, fontWeight: FontWeight.w600),
-                            )
-                          ],
+                        icon: Icon(
+                          Icons.add_circle,
+                          color: appColor(context).green,
                         ),
                         tooltip: "Add Field",
                       ),
@@ -268,19 +276,9 @@ class InvoiceGenerator extends ConsumerWidget {
                         onPressed: () {
                           removeItem(invoiceItemsNotifier.value.length - 1);
                         },
-                        icon: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          spacing: 8,
-                          children: [
-                            Icon(
-                              Icons.remove_circle_rounded,
-                              color: appColor(context).green,
-                            ),
-                            Text(
-                              'Remove Field',
-                              style: TextStyle(fontSize: 18, color: appColor(context).text, fontWeight: FontWeight.w600),
-                            )
-                          ],
+                        icon: Icon(
+                          Icons.remove_circle_rounded,
+                          color: appColor(context).green,
                         ),
                         tooltip: "Remove Field",
                       )
@@ -410,11 +408,19 @@ class InvoiceItemRow {
       TableCell(
         child: Padding(
           padding: const EdgeInsets.all(18),
-          child: Text(itemData['total'],
+          child: Tooltip(
+            message: itemData['total'],
+            child: AutoSizeText(
+              itemData['total'],
+              minFontSize: 16,
+              maxFontSize: 18,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
               style: TextStyle(
-                fontSize: 18,
                 color: appColor(context).text,
-              )),
+              ),
+            ),
+          ),
         ),
       ),
     ];
