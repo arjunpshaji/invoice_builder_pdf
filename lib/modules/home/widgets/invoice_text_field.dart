@@ -19,6 +19,10 @@ class InvoiceTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final border = OutlineInputBorder(
+      borderSide: BorderSide(color: appColor(context).text!),
+      borderRadius: const BorderRadius.all(Radius.circular(5)),
+    );
     return Padding(
       padding: const EdgeInsets.only(bottom: 10),
       child: TextField(
@@ -27,26 +31,11 @@ class InvoiceTextField extends StatelessWidget {
         readOnly: isReadOnly,
         decoration: InputDecoration(
           labelText: label,
-          border: OutlineInputBorder(
-            borderSide: BorderSide(color: appColor(context).text!),
-            borderRadius: const BorderRadius.all(Radius.circular(5)),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: appColor(context).text!),
-            borderRadius: const BorderRadius.all(Radius.circular(5)),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: appColor(context).text!),
-            borderRadius: const BorderRadius.all(Radius.circular(5)),
-          ),
-          errorBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: appColor(context).text!),
-            borderRadius: const BorderRadius.all(Radius.circular(5)),
-          ),
-          focusedErrorBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: appColor(context).text!),
-            borderRadius: const BorderRadius.all(Radius.circular(5)),
-          ),
+          border: border,
+          enabledBorder: border,
+          focusedBorder: border,
+          errorBorder: border,
+          focusedErrorBorder: border,
         ),
         style: textStyle,
       ),
